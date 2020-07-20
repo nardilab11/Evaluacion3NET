@@ -27,7 +27,15 @@ namespace FormularioModulo
             if(primNumVal && segNumVal)
             {
                 int resultado = sm.calcularModulo(primerNum, segundoNum);
-                _lblRes.Text = string.Format("El módulo de sus dos números es: {0}", resultado.ToString());
+                if(resultado == -1)
+                {
+                    Response.Write("<script>alert('El divisor no puede ser cero.')</script>");
+                    _lblRes.Text = "";
+                }
+                else
+                {
+                    _lblRes.Text = string.Format("El módulo de sus dos números es: {0}", resultado.ToString());
+                }
             }
             else
             {

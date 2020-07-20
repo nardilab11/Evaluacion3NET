@@ -11,15 +11,28 @@ public class ServicioModulo : IServicioModulo
 {
 	public int calcularModulo(int a, int b)
 	{
-		if (a >= b)
+		if (Math.Abs(a) >= Math.Abs(b))
 		{
-			return a % b;
+			if(b == 0)
+			{
+				return -1;
+			}
+			else
+			{
+				return a % b;
+			}
 		}
 		else
 		{
-			return b % a;
+			if(a == 0)
+			{
+				return -1;
+			}
+			else
+			{
+				return b % a;
+			}
 		}
-		
 	}
 
 }
